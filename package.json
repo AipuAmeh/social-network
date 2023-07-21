@@ -1,0 +1,14 @@
+{
+  "name": "Social-Network",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
