@@ -1,18 +1,19 @@
 const { User, Thought, Reaction } = require('../models');
 
 module.exports = {
-    async getUser(req, res){
+    async getUsers(req, res) {
         try {
-            const user = User.find({});
-            res.status(200).json(user);
+            const user = await User.find();
+            res.json(user);
         } catch (error) {
+            console.log(error);
             res.status(500).json(error);
         }
     },
 
     async getOneUser(req, res) {
         try {
-            const user = User.findOne({ _id: req.params.userId })
+            const user = await User.findOne({ _id: req.params.userId })
             if (!user) {
                 return res.json({ message: 'Unable to find that user' });
             }

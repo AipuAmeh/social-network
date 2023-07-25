@@ -45,6 +45,7 @@ userSchema
 
 const User = model('user', userSchema);
 
+// user seeds
 User.find({})
 .then( async collection => {
   if (collection.length === 0) {
