@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require('mongoose');
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   username: {
     type: String,
     unique: true,
@@ -43,7 +43,32 @@ userSchema
     return this.friends.length;
 });
 
-const User = mongoose.model('user', userSchema);
+const User = model('user', userSchema);
+
+// user seeds
+User.find({})
+.then( async collection => {
+  if (collection.length === 0) {
+    const results = await User.insertMany([
+      {
+        username: 'Jessica Biel',
+        email: 'jessicabiel@hotmail.com'
+    },
+    {
+        username: 'Lauren London',
+        email: 'laurenlondon928@gmail.com'
+    },
+    {
+        username: 'Paul Walker',
+        email: 'paulwalker@yahoo.com'
+    }
+    ]);
+    return console.log('Users inserted', results);
+  }
+  return console.log('Users already populated');
+})
+.catch(err => console.log(err));
+
 
 module.exports = User;
 
