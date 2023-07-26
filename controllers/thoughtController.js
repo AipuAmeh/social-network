@@ -28,9 +28,13 @@ module.exports = {
         try {
             const thought = await Thought.create({ 
                 thoughtText: req.body.thoughtText,
-                username: req.body.username,
-                userId: req.body.userId,     
+                username: req.body.username  
             });
+           await User.findOneAndUpdate(
+                { _id: req.body.userId },
+                { $push: { thoughts: thought._id }},
+                { new: true },
+            )
             if (!thought) {
                 return res.json({ message: 'Could not create thought' });
             }

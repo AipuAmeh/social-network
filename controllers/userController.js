@@ -48,5 +48,22 @@ module.exports = {
         } catch (error) {
             res.status(500).json(error);
         }
-    }
+    },
+
+    // async updateUser(req, res) {
+    //     try {
+    //         const user = await User.findOneAndUpdate(
+    //            { _id: req.params.userId},
+    //            { username: req.body.username },
+    //            { email: req.body.email },
+    //            { new: true }
+    //      )
+    //      if (!user) {
+    //         return res.json({ message: 'Unable to update user' });
+    //      }
+    //      res.json(user);
+    //     } catch (error) {
+    //         res.status(500).json(error);
+    //     }
+    // }
 };
