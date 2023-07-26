@@ -21,5 +21,32 @@ module.exports = {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+
+    async createUser(req, res) {
+        try {
+            const user = await User.create(req.body);
+            if (!user) {
+                return res.json({ message: 'Could not create user' });
+            }
+            res.json(user);
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+
+    async addFriendToUser(req, res) {
+        try {
+            const friend = await User.findOneAndUpdate({
+                _id: req.params.userId,
+                friends: req.params.friendsId,
+            });
+            if (!friend) {
+                return res.json({ message: 'Unable to add friend' });
+            }
+            res.json(friend);
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
 };
