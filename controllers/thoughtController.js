@@ -21,5 +21,27 @@ module.exports = {
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+
+    // push created thought to associated users array
+    async createThoughts(req, res) {
+        try {
+            const thought = await Thought.create({ 
+                thoughtText: req.body.thoughtText,
+                username: req.body.username  
+            });
+           await User.findOneAndUpdate(
+                { _id: req.body.userId },
+                { $push: { thoughts: thought._id }},
+                { new: true },
+            )
+            if (!thought) {
+                return res.json({ message: 'Could not create thought' });
+            }
+            res.json(thought);
+
+        } catch (error) {
+            res.status(500).json(error);
+        }
     }
-}
+};
