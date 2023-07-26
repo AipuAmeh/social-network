@@ -4,7 +4,7 @@ const {
     getOneUser
 } = require('../../controllers/userController');
 
-// /api/user
+// /api/users
 router.route('/').get(getUsers);
 
 router.route('/:userId').get(getOneUser);
