@@ -1,15 +1,15 @@
 # Social-Network
 ## Description
 
-This week's challenge was using a noSQL database to create routes. The database that we used was mongoDB. Though very similar to the relational database mySQL, mongoDB introduced more flexibility and 
+This week's challenge was using a noSQL database to create api routes for a social network. The database that we used was Mongoose's mongoDB. Though very similar to the relational database of mySQL, mongoDB introduces more flexibility by saving data into documents. We also learned the different syntax needed to create, read, update, and delete the routes that we created.
 
 ## Installation
 
-N/A
+To install this application, you need Express.js, MongoDB database, and Mongoose. 
 
 ## Usage
 
-To use this Prework Study Guide, you can review the notes in each section. For suggestions on what to study first, open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows). A console panel should open either below or to the side of the webpage in the browser. There you will see a list of topics we learned from the prework along with a suggestion on which topic to study first.
+This application runs by simply typing ```nodemon run watch``` into the integrated terminal to start the server. User and Thought data will be seeded into the database to begin. Once data has been seeded, you can test your routes using any of the CRUD methods.
 
 ## Credits
 
@@ -17,4 +17,4 @@ N/A
 
 ## License
 
-Please refer to the LICENSE in the repo.
+N/A
