@@ -23,7 +23,6 @@ module.exports = {
         }
     },
 
-    // push created thought to associated users array
     async createThoughts(req, res) {
         try {
             const thought = await Thought.create({ 
@@ -40,6 +39,22 @@ module.exports = {
             }
             res.json(thought);
 
+        } catch (error) {
+            res.status(500).json(error);
+        }
+    },
+
+    async updateThoughts(req, res) {
+        try {
+           const thought = await Thought.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            { thoughtText: req.body.thoughtText },
+            { new: true }
+           ) 
+           if (!thought) {
+            return res.json({ message: 'Unable to update thought' });
+           }
+           res.json(thought);
         } catch (error) {
             res.status(500).json(error);
         }
