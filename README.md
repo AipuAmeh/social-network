@@ -1,7 +1,7 @@
 # Social-Network
 ## Description
 
-This week's challenge was using a noSQL database to create api routes for a social network. The database that we used was Mongoose's mongoDB. Though very similar to the relational database of mySQL, mongoDB introduces more flexibility by saving data into documents. We also learned the different syntax needed to create, read, update, and delete the routes that we created.
+This week's challenge was to use a noSQL database to create api routes for a social network. The database that we used was Mongoose's mongoDB. Though very similar to the mainly relational database of mySQL, mongoDB introduces more flexibility by saving data into documents. We also learned the different syntax needed to create, read, update, and delete the routes that we created.
 
 ## Installation
 
