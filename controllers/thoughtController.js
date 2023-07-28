@@ -65,11 +65,11 @@ module.exports = {
         _id: req.params.thoughtId,
       });
       if (!thought) {
-        return res.status(404).json({ message: 'No thoughts with that ID!' });
-      } 
-      res.json({ message: 'Successfully deleted thought' });
+        return res.status(404).json({ message: "No thoughts with that ID!" });
+      }
+      res.json({ message: "Successfully deleted thought" });
     } catch (error) {
-        res.status(500).json(error);
+      res.status(500).json(error);
     }
   },
 };
