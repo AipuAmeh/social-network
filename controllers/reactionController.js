@@ -6,7 +6,7 @@ module.exports = {
       const newReaction = await Thought.findOneAndUpdate(
        { _id: req.params.thoughtId },
        { $addToSet: {reactions: req.body }},
-       { new: true }
+       { runValidators: true, new: true }
       );
       if (!newReaction) {
         return res.json({ message: "Cannot add new reaction" });
