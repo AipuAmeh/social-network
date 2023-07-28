@@ -37,10 +37,11 @@ module.exports = {
 
   async addFriendToUser(req, res) {
     try {
-      const friend = await User.findOneAndUpdate({
-        _id: req.params.userId,
-        friends: req.params.friendsId,
-      });
+      const friend = await User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $addToSet: { friends: req.params.friendsId } },
+        { runValidators: true, new: true }
+      );
       if (!friend) {
         return res.json({ message: "Unable to add friend" });
       }
