@@ -7,6 +7,8 @@ This week's challenge was to use a noSQL database to create api routes for a soc
 
 To install this application, you need Express.js, MongoDB database, and Mongoose.
 
+Walkthrough Link: https://watch.screencastify.com/v/pRuCGlbdtqfvMwyKgIKf
+
 ## Usage
 
 This application runs by simply typing ```nodemon run watch``` into the integrated terminal to start the server. User and Thought data will be seeded into the database to begin. Once data has been seeded, you can test your routes in Insomnia using any of the CRUD methods!
