@@ -7,7 +7,7 @@ This week's challenge was to use a noSQL database to create api routes for a soc
 
 To install this application, you need Express.js, MongoDB database, and Mongoose.
 
-Walkthrough Link: https://watch.screencastify.com/v/pRuCGlbdtqfvMwyKgIKf
+[Walkthrough Link](https://watch.screencastify.com/v/pRuCGlbdtqfvMwyKgIKf)
 
 ## Usage
 
